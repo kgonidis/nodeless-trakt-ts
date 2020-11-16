@@ -19,7 +19,7 @@
         "url": "https://github.com/kgonidis/nodeless-trakt-ts.git"
     },
     "bugs": {
-        "url": "https://github.com/kdemoya/nodeless-trakt/issues"
+        "url": "https://github.com/kgonidis/nodeless-trakt-ts.git/issues"
     },
     "dependencies": {
         "random-hexadecimal": "^1.0.3",
