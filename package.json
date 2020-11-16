@@ -10,7 +10,8 @@
         "reactnative",
         "javascript"
     ],
-    "main": "trakt.js",
+    "main": "index.js",
+    "types": "index.d.ts",
     "author": "Kelvin De Moya",
     "license": "MIT",
     "repository": {
