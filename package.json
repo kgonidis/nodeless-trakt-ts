@@ -1,7 +1,7 @@
 {
-    "name": "nodeless-trakt",
-    "version": "1.0.0",
-    "description": "Interact with Trakt.tv API in JavaScript environments without node core libraries (such as React Native)",
+    "name": "nodeless-trakt-ts",
+    "version": "0.1.0",
+    "description": "Interact with Trakt.tv API in JavaScript and Typescript environments without node core libraries (such as React Native)",
     "keywords": [
         "trakt",
         "api",
@@ -12,11 +12,11 @@
     ],
     "main": "index.js",
     "types": "index.d.ts",
-    "author": "Kelvin De Moya",
+    "author": "Kiron Gonidis",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/kdemoya/nodeless-trakt"
+        "url": "https://github.com/kgonidis/nodeless-trakt-ts.git"
     },
     "bugs": {
         "url": "https://github.com/kdemoya/nodeless-trakt/issues"
