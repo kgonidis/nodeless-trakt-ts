@@ -68,11 +68,11 @@ export interface Sharing {
 }
 
 export interface ExtFull {
-  extended: "full";
+  extended?: "full";
 }
 
 export interface ExtEpisodes {
-  extended: "full" | "episodes";
+  extended?: "full" | "episodes";
 }
 
 export interface Calendars extends ExtFull {
