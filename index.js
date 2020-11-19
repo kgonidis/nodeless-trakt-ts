@@ -9,7 +9,7 @@ const randomHex = require('random-hexadecimal');
 const methods = require('./methods.json');
 const sanitizer = require('sanitizer').sanitize;
 
-module.exports.default = class Trakt {
+module.exports.Trakt = class Trakt {
     constructor(settings = {}, debug) {
         if (!settings.client_id) throw Error('Missing client_id');
 
@@ -189,20 +189,21 @@ module.exports.default = class Trakt {
                 'Content-Type': 'application/json',
                 'trakt-api-version': '2',
                 'trakt-api-key': this._settings.client_id
-            },
-            body: (method.body ? Object.assign({}, method.body) : {})
+            }
         };
 
         if (method.opts['auth']) req.headers['Authorization'] = 'Bearer ' + this._authentication.access_token;
 
-        for (let k in params) {
-            if (k in req.body) req.body[k] = params[k];
+        if (method.method !== 'GET' && method.method !== 'HEAD') {
+          req.body = (method.body ? Object.assign({}, method.body) : {});
+          for (let k in params) {
+              if (k in req.body) req.body[k] = params[k];
+          }
+          for (let k in req.body) {
+              if (!req.body[k]) delete req.body[k];
+          }
+          req.body = JSON.stringify(req.body);
         }
-        for (let k in req.body) {
-            if (!req.body[k]) delete req.body[k];
-        }
-
-        req.body = JSON.stringify(req.body);
 
         this._debug(req);
         return fetch(req.url, req).then(response => this._parseResponse(method, params, response));
@@ -210,29 +211,27 @@ module.exports.default = class Trakt {
 
     // Parse trakt response: pagination & stuff
     _parseResponse (method, params, response) {
-        if (!response.body) return response.body;
+        return response.json().then(data => {
+          let parsed = data;
 
-        const data = JSON.parse(response.body);
-        let parsed = data;
+          if (params && params.pagination) {
+              parsed = {
+                  data: data
+              };
 
-        if (params && params.pagination) {
-            parsed = {
-                data: data
-            };
-
-            if (method.opts.pagination) {
-                parsed.pagination = {
-                    'item-count': response.headers['x-pagination-item-count'],
-                    'limit': response.headers['x-pagination-limit'],
-                    'page': response.headers['x-pagination-page'],
-                    'page-count': response.headers['x-pagination-page-count'],
-                };
-            } else {
-                parsed.pagination = false;
-            }
-        }
-
-        return this._sanitize(parsed);
+              if (method.opts.pagination) {
+                  parsed.pagination = {
+                      'item-count': response.headers['x-pagination-item-count'],
+                      'limit': response.headers['x-pagination-limit'],
+                      'page': response.headers['x-pagination-page'],
+                      'page-count': response.headers['x-pagination-page-count'],
+                  };
+              } else {
+                  parsed.pagination = false;
+              }
+          }
+          return this._sanitize(parsed);
+        });
     }
 
     // Sanitize output (xss)
