@@ -1,41 +1,45 @@
 {
-    "name": "nodeless-trakt-ts",
-    "version": "0.1.0",
-    "description": "Interact with Trakt.tv API in JavaScript and Typescript environments without node core libraries (such as React Native)",
-    "keywords": [
-        "trakt",
-        "api",
-        "wrapper",
-        "react",
-        "reactnative",
-        "javascript"
-    ],
-    "scripts": {
-        "test": "mocha -r ts-node/register -r mochainit.js tests/**/*.test.ts"
-    },
-    "main": "index.js",
-    "types": "index.d.ts",
-    "author": "Kiron Gonidis",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/kgonidis/nodeless-trakt-ts.git"
-    },
-    "bugs": {
-        "url": "https://github.com/kgonidis/nodeless-trakt-ts.git/issues"
-    },
-    "dependencies": {
-        "random-hexadecimal": "^1.0.3",
-        "sanitizer": "0.x.x"
-    },
-    "devDependencies": {
-        "@types/chai": "^4.2.14",
-        "@types/mocha": "^8.0.4",
-        "chai": "^4.2.0",
-        "isomorphic-fetch": "^3.0.0",
-        "mocha": "^8.2.1",
-        "nyc": "^15.1.0",
-        "ts-node": "^9.0.0",
-        "typescript": "^4.0.5"
-    }
+  "name": "nodeless-trakt-ts",
+  "version": "0.1.0",
+  "description": "Interact with Trakt.tv API in JavaScript and Typescript environments without node core libraries (such as React Native)",
+  "keywords": [
+    "trakt",
+    "api",
+    "wrapper",
+    "react",
+    "reactnative",
+    "javascript"
+  ],
+  "scripts": {
+    "test": "mocha -r ts-node/register -r mochainit.js tests/**/*.test.ts"
+  },
+  "main": "index.js",
+  "types": "index.d.ts",
+  "author": "Kiron Gonidis",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kgonidis/nodeless-trakt-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kgonidis/nodeless-trakt-ts.git/issues"
+  },
+  "dependencies": {
+    "random-hexadecimal": "^1.0.3",
+    "sanitizer": "0.x.x"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.14",
+    "@types/mocha": "^8.0.4",
+    "chai": "^4.2.0",
+    "isomorphic-fetch": "^3.0.0",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.5"
+  },
+  "homepage": "https://github.com/kgonidis/nodeless-trakt-ts#readme",
+  "directories": {
+    "test": "tests"
+  }
 }
