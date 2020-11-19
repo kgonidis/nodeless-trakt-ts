@@ -1,6 +1,6 @@
 {
   "name": "nodeless-trakt-ts",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Interact with Trakt.tv API in JavaScript and Typescript environments without node core libraries (such as React Native)",
   "keywords": [
     "trakt",
