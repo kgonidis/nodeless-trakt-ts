@@ -1,7 +1,7 @@
 # nodeless-trakt
-**Trakt.tv API wrapper for JavaScript environments without node core libraries (such as React Native), featuring:**
+**Trakt.tv API wrapper for JavaScript and Typescript environments without node core libraries (such as React Native), featuring:**
 
-- [All Trakt.tv API v2 methods](https://github.com/kdemoya/nodeless-trakt/wiki/Supported-methods)
+- [All Trakt.tv API v2 methods](https://github.com/kgonidis/nodeless-trakt-ts/blob/master/methods.json)
 - Promises
 - Forget JSON, use Objects, Arrays and Strings directly
 - Enhanced protection against: CSRF (session riding) and XSS (content spoofing) attacks.
@@ -74,7 +74,7 @@ trakt.import_token(token).then(newTokens => {
 ```
 
 #### Actual API requests
-See methods in [methods.json](https://github.com/kdemoya/nodeless-trakt/blob/master/methods.json) or [wiki](https://github.com/kdemoya/nodeless-trakt/wiki/Supported-methods).
+See methods in [methods.json](https://github.com/kgonidis/nodeless-trakt-ts/blob/master/methods.json)
 
 ```js
 trakt.calendars.all.shows({
