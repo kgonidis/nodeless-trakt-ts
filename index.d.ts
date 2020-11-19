@@ -813,14 +813,12 @@ export interface CalendarShowEntry {
   episode?: Episode;
   show?: Show;
 }
-export interface Settings {
+export interface TraktSettings {
   client_id: string;
   client_secret: string;
   redirect_uri?: string;
   debug?: boolean;
   endpoint?: string;
-  pagination?: boolean;
-  useragent?: string;
 }
 
 export interface Sharing {
@@ -1000,7 +998,7 @@ export interface UpdatedShow {
 }
 
 export declare class Trakt {
-  constructor(settings: Settings, debug?: boolean);
+  constructor(settings: TraktSettings, debug?: boolean);
   calendars: {
     my: {
       shows(params?: Calendars): Promise<CalendarShowEntry[]>;
