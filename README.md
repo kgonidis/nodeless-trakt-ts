@@ -1,4 +1,4 @@
-# nodeless-trakt
+# nodeless-trakt-ts
 **Trakt.tv API wrapper for JavaScript and Typescript environments without node core libraries (such as React Native), featuring:**
 
 - [All Trakt.tv API v2 methods](https://github.com/kgonidis/nodeless-trakt-ts/blob/master/methods.json)
@@ -8,6 +8,10 @@
 <!--- [Plugin extension](https://github.com/kdemoya/nodeless-trakt/wiki/Available-plugins)-->
 
 ### Note: This is loosely based on [vankasteelj/trakt.tv](https://github.com/vankasteelj/trakt.tv) node wrapper, we are just stripping the node parts to make it useful in React Native and other nodeless JavaScript environments.
+
+## Install
+
+npm i nodeless-trakt-ts
 
 *For more information about Trakt.tv API, read http://docs.trakt.apiary.io/*
 
