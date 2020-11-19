@@ -13,10 +13,6 @@
 
 ## Example usage
 
-#### Setup
-
-    npm install nodeless-trakt
-
 #### Initialize
 ```js
 const Trakt = require('nodeless-trakt');
